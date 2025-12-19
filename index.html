@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You, the Player — Ability Generator</title>
+  <style>
+    body {
+      font-family: serif;
+      background: #111;
+      color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .card {
+      border: 2px solid #ccc;
+      padding: 30px;
+      max-width: 600px;
+      background: #1c1c1c;
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 1.5em;
+    }
+    .ability {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+    .hint {
+      font-size: 0.8em;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>You, the Player</h1>
+  <div class="ability" id="ability"></div>
+  <div class="hint">(Reload the page for a new ability.)</div>
+</div>
+
+<script>
+  const abilities = [
+    "+1: Say your full name. Create a 2/2 creature token whose creature type is your job, hobby, or biggest flaw.",
+    "+1: Gain 1 life for each letter in your first name.",
+    "+1: Choose an opponent. That player decides whether you draw a card or lose 2 life.",
+    "−1: Reveal something about yourself. If the table nods, draw a card.",
+    "−2: Sacrifice a permanent. If you look sad doing so, return it to the battlefield tapped.",
+    "−2: Each player votes for you. For each vote, add one mana of any color.",
+    "−3: You may apologize. If you do, counter target spell unless its controller forgives you.",
+    "+0: Create a colorless Artifact token named \"Responsibility\" with \"At the beginning of your upkeep, feel bad.\"",
+    "−4: If you are currently holding a drink, draw two cards. Otherwise, discard one.",
+    "+1: Until your next turn, you are the monarch. Yes, physically.",
+    "−5: Exchange control of two permanents you can see from your seat.",
+    "+1: Choose a number you think is reasonable. Each opponent disagrees.",
+    "−6: You get an emblem with \"Whenever you hesitate, lose 1 life.\"",
+    "+2: Compliment another player. If it was sincere, gain 2 life.",
+    "−7: End the turn. Also end the conversation.",
+    "+1: If your name contains the letter 'A', draw a card. Otherwise, mill one.",
+    "−3: Flip a coin. If you win, untap all permanents you control. If you lose, explain why.",
+    "+0: Do nothing. If anyone questions it, draw a card.",
+    "−8: You get an emblem with \"Whenever you make a decision, regret it.\"",
+    "−10: Restart the game, but keep your memories."
+  ];
+
+  const randomAbility = abilities[Math.floor(Math.random() * abilities.length)];
+  document.getElementById("ability").textContent = randomAbility;
+</script>
+
+</body>
+</html>
